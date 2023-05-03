@@ -10,9 +10,13 @@
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "classnames": "^2.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-range-slider-input": "^3.0.7",
+    "react-rangeslider": "^2.2.0",
     "react-scripts": "5.0.1",
+    "sass": "^1.62.1",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
@@ -20,7 +24,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:ci": "cross-env TIMING=1 yarn lint --max-warnings=0 && yarn format --check",
+    "lint:fix": "cross-env TIMING=1 yarn lint --fix && yarn format --write"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +47,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-rangeslider": "^2.2.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.39.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-babel-module": "^5.3.1",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.8"
   }
 }
