@@ -1,10 +1,15 @@
 import React, { useCallback, useEffect, useState, useMemo } from 'react';
 import classes from './Main.module.scss';
-
+import { BTCIcon, ETHIcon } from '../assets';
+import { pct, cur } from '../helpers';
 enum Currencies {
   BTC = 'BTC',
   ETH = 'ETH',
 }
+const Icons = {
+  [Currencies.BTC]: BTCIcon,
+  [Currencies.ETH]: ETHIcon,
+};
 
 type RangeConfig = { min: number; max: number; step: number };
 
@@ -106,30 +111,33 @@ export const MainContainer: React.FC = () => {
       </p>
       <div className={classes.content}>
         <div className={classes.section}>
-          <fieldset>
-            <legend>Select currency:</legend>
-            {Object.values(Currencies).map((c) => (
-              <div key={c}>
-                <input
-                  type='radio'
-                  id={c}
-                  name={c}
-                  value={c}
-                  onChange={onCurrencyChange}
-                  checked={c === currency}
-                />
-                <label htmlFor={c}>{c}</label>
-              </div>
-            ))}
+          <h3 className={classes.title}>Select currency</h3>
+          <fieldset className={classes.currencyFieldset}>
+            {Object.values(Currencies).map((c) => {
+              const Icon = Icons[c];
+              return (
+                <div key={c}>
+                  <input
+                    type='radio'
+                    id={c}
+                    name={c}
+                    value={c}
+                    onChange={onCurrencyChange}
+                    checked={c === currency}
+                  />
+                  <label htmlFor={c}>{c}</label>
+                  <Icon width={20} height={20} />
+                </div>
+              );
+            })}
           </fieldset>
         </div>
         <div className={classes.vs} />
         <div className={classes.section}>
-          <div
-            style={{ display: 'flex', flexDirection: 'column', width: '100%' }}
-          >
+          <h3 className={classes.title}>Select supply</h3>
+          <div className={classes.sliders}>
             <h4>
-              Total supply {currency}: {totalSupply}
+              Total supply: {cur(totalSupply)} {currency}
             </h4>
             <input
               type='range'
@@ -139,32 +147,13 @@ export const MainContainer: React.FC = () => {
               value={totalSupply}
               onChange={onRangeChange}
             />
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                width: '100%',
-                justifyContent: 'space-around',
-              }}
-            >
-              {new Array(11).fill(0).map((i, index) => (
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                  }}
-                  key={'n1' + index}
-                >
-                  <p style={{ fontSize: 10 }}>
-                    {((Range[currency].max / 10) * index).toFixed(2)}
-                  </p>
-                </div>
-              ))}
+            <div className={classes.axis}>
+              <p>{cur(Range[currency].min)}</p>
+              <p>{cur(Range[currency].max / 2)}</p>
+              <p>{cur(Range[currency].max)}</p>
             </div>
             <h4>
-              Actual loan {currency}: {actualLoan}
+              Actual loan: {cur(actualLoan)} {currency}
             </h4>
             <input
               type='range'
@@ -174,47 +163,48 @@ export const MainContainer: React.FC = () => {
               value={actualLoan}
               onChange={onActualLoanChange}
             />
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                width: '100%',
-                justifyContent: 'space-around',
-              }}
-            >
-              {new Array(11).fill(0).map((i, index) =>
-                MaxLoanRange.max === 0 ? null : (
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}
-                    key={'n2' + index}
-                  >
-                    <p style={{ fontSize: 10 }}>
-                      {((MaxLoanRange.max / 10) * index).toFixed(2)}
-                    </p>
-                  </div>
-                )
-              )}
+            <div className={classes.axis}>
+              <p>{cur(MaxLoanRange.min)}</p>
+              <p>{cur(MaxLoanRange.max / 2)}</p>
+              <p>{cur(MaxLoanRange.max)}</p>
             </div>
           </div>
         </div>
-
         <div className={classes.vs} />
         <div className={classes.section}>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <p>Utilization Factor: {UtilizationFactor * 100}%</p>
-            <p>Collateral Factor: {CollateralFactor * 100}%</p>
-            <p>Total Supply: {totalSupply}</p>
-            <p>Total Supply USD: {totalSupplyUSD}</p>
-            <p>Actual Loan: {actualLoan}</p>
-            <p>Actual Loan USD: {actualLoanUSD}</p>
-            <p>Liquidation Treshold: {liquidationThreshold} USD</p>
-            <p>
-              {currency} price: {Prices[currency]} USD
+          <h3 className={classes.title}>Apply results</h3>
+          <div className={classes.results}>
+            <p className={classes.value}>
+              <span className={classes.title}>Utilization Factor:</span>{' '}
+              {pct(UtilizationFactor)}
+            </p>
+            <p className={classes.value}>
+              <span className={classes.title}>Collateral Factor:</span>{' '}
+              {pct(CollateralFactor)}
+            </p>
+            <p className={classes.value}>
+              <span className={classes.title}>Total Supply:</span>{' '}
+              {cur(totalSupply)} {currency}
+            </p>
+            <p className={classes.value}>
+              <span className={classes.title}>Total Supply USD:</span>{' '}
+              {cur(totalSupplyUSD)} USD
+            </p>
+            <p className={classes.value}>
+              <span className={classes.title}>Actual Loan:</span>{' '}
+              {cur(actualLoan)} {currency}
+            </p>
+            <p className={classes.value}>
+              <span className={classes.title}>Actual Loan USD:</span>{' '}
+              {cur(actualLoanUSD)} USD
+            </p>
+            <p className={classes.value}>
+              <span className={classes.title}>Liquidation Treshold:</span>{' '}
+              {cur(liquidationThreshold)} USD
+            </p>
+            <p className={classes.value}>
+              <span className={classes.title}>{currency} price:</span>{' '}
+              {cur(Prices[currency])} USD
             </p>
           </div>
         </div>
