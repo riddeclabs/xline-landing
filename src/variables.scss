@@ -1,0 +1,33 @@
+$screen-sm-min: 360px;
+$screen-md-min: 767px;
+$screen-lg-min: 1440px;
+
+@mixin sm {
+  @media (max-width: #{calc($screen-md-min - 1px)}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) and (max-width: #{calc($screen-lg-min - 1px)}) {
+    @content;
+  }
+}
+
+@mixin breakpoint($keys...) {
+  @each $key in $keys {
+    @if ($key ==sm) {
+      @include sm {
+        @content;
+      }
+    } @else if ($key ==md) {
+      @include md {
+        @content;
+      }
+    } @else if ($key ==lg) {
+      @include lg {
+        @content;
+      }
+    }
+  }
+}
