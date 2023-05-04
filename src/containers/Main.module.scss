@@ -54,6 +54,7 @@
   padding-bottom: 20px;
   @include breakpoint(sm, md) {
     flex-direction: column;
+    padding-bottom: 80px;
   }
 }
 
@@ -67,7 +68,7 @@
 
   .title {
     font-size: 20px;
-    font-weight: 600px;
+    font-weight: 600;
     color: white;
     text-shadow: 2px 2px 10px rgba(69, 68, 68, 0.5);
     margin-bottom: 20px;
