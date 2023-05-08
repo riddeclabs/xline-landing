@@ -1,4 +1,5 @@
 export { ReactComponent as LogoIcon } from './logo.svg';
+export { ReactComponent as LogoBlackIcon } from './logoBlack.svg';
 export { ReactComponent as ChooseCollateralIcon } from './chooseCollateral.svg';
 export { ReactComponent as SetCollateralIcon } from './setCollateral.svg';
 export { ReactComponent as AdjustUtilizationIcon } from './adjustUtilization.svg';
@@ -11,3 +12,4 @@ export { ReactComponent as RatesIcon } from './rates.svg';
 export { ReactComponent as RatesWhiteIcon } from './ratesWhite.svg';
 export { ReactComponent as WalletIcon } from './wallet.svg';
 export { ReactComponent as WalletWhiteIcon } from './walletWhite.svg';
+export { ReactComponent as CrossIcon } from './cross.svg';

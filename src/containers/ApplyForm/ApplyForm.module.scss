@@ -20,3 +20,114 @@
   text-transform: uppercase;
   color: $xlineWhite;
 }
+
+.modal {
+  all: unset;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0px;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 12;
+}
+
+.content {
+  width: 700px;
+  height: 446px;
+
+  background: $xlineWhite;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-left: 117px;
+  padding-right: 117px;
+  flex-direction: column;
+
+  .closeButton {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .logo {
+    margin-bottom: 48px;
+    width: 85px;
+    height: 38px;
+  }
+  .head {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-transform: uppercase;
+    margin: 0;
+    color: $xlineDark;
+    margin-bottom: 19px;
+  }
+  .blue {
+    color: $xlineBlue !important;
+  }
+  .body {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0;
+    margin-bottom: 40px;
+    color: $xlineDarkGray;
+  }
+  .inputRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 9px;
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      p {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+        margin: 0;
+      }
+      input {
+        width: 285px;
+        height: 35px;
+
+        background: #ffffff;
+        border: 1px solid rgba(170, 173, 175, 0.5);
+      }
+    }
+    button {
+      all: unset;
+      width: 172px;
+      max-height: 35px;
+      padding: 10px 24px;
+      cursor: pointer;
+
+      background: $xlineBlue;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $xlineWhite;
+    }
+  }
+}
