@@ -11,8 +11,8 @@
 
   @include breakpoint(sm) {
     padding-left: 30px;
-  padding-right: 30px;
-  gap: 30px;
+    padding-right: 30px;
+    gap: 30px;
   }
 
   .actionRow {
@@ -20,9 +20,9 @@
     flex-direction: row;
     justify-content: space-between;
     @include breakpoint(md, sm) {
-        flex-direction: column;
-        gap: 20px;
-      }
+      flex-direction: column;
+      gap: 20px;
+    }
     .text {
       font-family: 'Inter';
       font-style: normal;
@@ -48,7 +48,9 @@
     border-top: 1px solid rgba(204, 205, 206, 0.5);
 
     svg {
+      @include breakpoint(sm) {
         width: 60px;
+      }
     }
 
     nav {
