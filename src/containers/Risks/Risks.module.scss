@@ -1,0 +1,54 @@
+@import 'src/variables.scss';
+
+.section {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  padding-left: 120px;
+  padding-right: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .title {
+    display: flex;
+    flex: 1;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */
+
+    color: $xlineBlue;
+  }
+  .info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 16px;
+    .head {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19px;
+      text-transform: uppercase;
+      margin: 0;
+      /* gray dark */
+
+      color: $xlineDark;
+    }
+    .body {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      margin: 0;
+
+      /* gray medium */
+
+      color: $xlineDarkGray;
+    }
+  }
+}

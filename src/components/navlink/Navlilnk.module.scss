@@ -1,0 +1,17 @@
+@import 'src/variables.scss';
+
+.link {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  color: $xlineWhite;
+
+  &:hover {
+    color: $xlineBlue;
+  }
+}

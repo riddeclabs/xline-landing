@@ -1,0 +1,130 @@
+@import 'src/variables.scss';
+
+.container {
+  background-color: $xlineWhite;
+  padding: 32px 42px;
+  width: 538px;
+
+  .title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $xlineDark;
+    padding-bottom: 24px;
+    margin: 0;
+  }
+  .separator {
+    height: 1.5px;
+    width: 100%;
+    background-color: rgba(170, 173, 175, 0.5);
+    margin-top: 22.25px;
+    margin-bottom: 22.25px;
+  }
+
+  .sliderHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .sliderTitle {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: capitalize;
+      opacity: 0.8;
+      color: $xlineDarkGray;
+      margin-right: 4px;
+    }
+    .value {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      text-transform: uppercase;
+      color: $xlineDark;
+    }
+  }
+  .slider {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    margin-left: 0;
+  }
+  .axis {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+    p {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 138.02%;
+      margin: 0;
+      text-transform: capitalize;
+
+      color: $xlineDark;
+
+      opacity: 0.8;
+    }
+  }
+  .sliderInfo {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 138.02%;
+    opacity: 0.8;
+    color: #949292;
+  }
+  .results {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    flex-wrap: wrap;
+    .frame {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      gap: 4px;
+      p {
+        margin: 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 138.02%;
+        /* or 19px */
+
+        text-transform: capitalize;
+        color: $xlineDarkGray;
+
+        opacity: 0.8;
+      }
+      span {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+
+        text-transform: uppercase;
+
+        /* gray dark */
+
+        color: $xlineDark;
+      }
+    }
+  }
+}

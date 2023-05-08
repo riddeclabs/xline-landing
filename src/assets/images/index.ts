@@ -1,0 +1,15 @@
+export { ReactComponent as BTCIcon } from './btc.svg';
+export { ReactComponent as ETHIcon } from './eth.svg';
+export { ReactComponent as LogoIcon } from './logo.svg';
+export { ReactComponent as ChooseCollateralIcon } from './chooseCollateral.svg';
+export { ReactComponent as SetCollateralIcon } from './setCollateral.svg';
+export { ReactComponent as AdjustUtilizationIcon } from './adjustUtilization.svg';
+export { ReactComponent as MonitorAndManageIcon } from './monitorAndManage.svg';
+export { ReactComponent as PaymentIcon } from './payment.svg';
+export { ReactComponent as PaymentWhiteIcon } from './paymentWhite.svg';
+export { ReactComponent as CreditCardIcon } from './creditCard.svg';
+export { ReactComponent as CreditCardWhiteIcon } from './creditCardWhite.svg';
+export { ReactComponent as RatesIcon } from './rates.svg';
+export { ReactComponent as RatesWhiteIcon } from './ratesWhite.svg';
+export { ReactComponent as WalletIcon } from './wallet.svg';
+export { ReactComponent as WalletWhiteIcon } from './walletWhite.svg';
