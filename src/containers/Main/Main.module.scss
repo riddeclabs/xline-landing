@@ -14,6 +14,11 @@
   -o-background-size: cover;
   background-size: cover;
 
+  @include breakpoint(sm) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   .content {
     display: flex;
     flex-direction: row;
@@ -21,6 +26,9 @@
     padding-top: 83px;
     padding-bottom: 69px;
     gap: 47px;
+    @include breakpoint(md, sm) {
+      flex-direction: column;
+    }
 
     .block {
       margin-top: 63px;
@@ -28,6 +36,9 @@
       flex-direction: column;
       flex: 1;
       text-align: left;
+      @include breakpoint(md, sm) {
+        margin-top: 0;
+      }
       .title {
         margin: 0;
         color: $xlineWhite;

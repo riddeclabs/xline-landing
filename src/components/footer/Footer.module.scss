@@ -9,10 +9,20 @@
   background: $xlineDark;
   gap: 60px;
 
+  @include breakpoint(sm) {
+    padding-left: 30px;
+  padding-right: 30px;
+  gap: 30px;
+  }
+
   .actionRow {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @include breakpoint(md, sm) {
+        flex-direction: column;
+        gap: 20px;
+      }
     .text {
       font-family: 'Inter';
       font-style: normal;
@@ -37,11 +47,21 @@
     background: transparent;
     border-top: 1px solid rgba(204, 205, 206, 0.5);
 
+    svg {
+        width: 60px;
+    }
+
     nav {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 89px;
+      @include breakpoint(md, sm) {
+        gap: 19px;
+      }
+      @include breakpoint(sm) {
+        gap: 9px;
+      }
     }
   }
 }

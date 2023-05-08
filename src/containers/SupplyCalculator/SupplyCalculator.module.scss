@@ -4,6 +4,9 @@
   background-color: $xlineWhite;
   padding: 32px 42px;
   width: 538px;
+  @include breakpoint(sm) {
+    width: 100%;
+  }
 
   .title {
     font-family: 'Inter';
@@ -97,6 +100,9 @@
       flex-direction: column;
       width: 30%;
       gap: 4px;
+      @include breakpoint(sm) {
+        width: 120px;
+      }
       p {
         margin: 0;
         font-family: 'Inter';

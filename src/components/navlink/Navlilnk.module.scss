@@ -11,6 +11,10 @@
 
   color: $xlineWhite;
 
+  @include breakpoint(sm) {
+    font-size: 12px;
+  }
+
   &:hover {
     color: $xlineBlue;
   }

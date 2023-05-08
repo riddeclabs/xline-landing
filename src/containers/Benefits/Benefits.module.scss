@@ -10,6 +10,11 @@
   gap: 40px;
   background: $xlineDark;
 
+  @include breakpoint(sm) {
+    padding-left: 30px;
+  padding-right: 30px;
+  }
+
   .title {
     font-family: 'Inter';
     font-style: normal;
@@ -26,6 +31,7 @@
     justify-content: stretch;
     width: 100%;
     gap: 20px;
+    flex-wrap: wrap;
 
     .itemHovered {
       background: $xlineBlue !important;
@@ -44,6 +50,7 @@
       gap: 20px;
       flex: 1;
       background: #ffffff;
+      min-width: 250px;
 
       .head {
         font-family: 'Inter';

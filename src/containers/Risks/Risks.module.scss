@@ -8,6 +8,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @include breakpoint(md, sm) {
+    flex-direction: column;
+  }
+  @include breakpoint(sm) {
+    padding-left: 30px;
+  padding-right: 30px;
+  }
 
   .title {
     display: flex;
