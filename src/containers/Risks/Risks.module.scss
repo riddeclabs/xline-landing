@@ -10,6 +10,7 @@
   justify-content: space-between;
   @include breakpoint(md, sm) {
     flex-direction: column;
+    gap: 30px;
   }
   @include breakpoint(sm) {
     padding-left: 30px;
