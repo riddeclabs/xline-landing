@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/xline-landing/static/css/main.f19f2bad.css",
-    "main.js": "/xline-landing/static/js/main.7b39b850.js",
+    "main.css": "/xline-landing/static/css/main.a19a9e88.css",
+    "main.js": "/xline-landing/static/js/main.1f1ee289.js",
     "static/js/787.3f2711aa.chunk.js": "/xline-landing/static/js/787.3f2711aa.chunk.js",
     "static/media/background.png": "/xline-landing/static/media/background.be64d5e3f16e81159aaf.png",
     "static/media/Inter-Bold.ttf": "/xline-landing/static/media/Inter-Bold.9aab1ebe6bd16660e37e.ttf",
@@ -19,15 +19,17 @@
     "static/media/paymentWhite.svg": "/xline-landing/static/media/paymentWhite.f3ff2977e9ae80431b60ab1df98949b8.svg",
     "static/media/chooseCollateral.svg": "/xline-landing/static/media/chooseCollateral.1032c03f5298bfc4bd4e8b69605ed087.svg",
     "static/media/logo.svg": "/xline-landing/static/media/logo.b35763468e820433befdb8402e9cb9c2.svg",
+    "static/media/logoBlack.svg": "/xline-landing/static/media/logoBlack.daa389a44c3285d8b050cd4d879ec9b0.svg",
     "static/media/creditCard.svg": "/xline-landing/static/media/creditCard.75659dc827019dbce1e9e5a70a5dd746.svg",
     "static/media/creditCardWhite.svg": "/xline-landing/static/media/creditCardWhite.7b3144a58c4c0fec2c746116d1a2d60b.svg",
     "index.html": "/xline-landing/index.html",
-    "main.f19f2bad.css.map": "/xline-landing/static/css/main.f19f2bad.css.map",
-    "main.7b39b850.js.map": "/xline-landing/static/js/main.7b39b850.js.map",
+    "static/media/cross.svg": "/xline-landing/static/media/cross.8ea31d451554116b956a46e613c39109.svg",
+    "main.a19a9e88.css.map": "/xline-landing/static/css/main.a19a9e88.css.map",
+    "main.1f1ee289.js.map": "/xline-landing/static/js/main.1f1ee289.js.map",
     "787.3f2711aa.chunk.js.map": "/xline-landing/static/js/787.3f2711aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f19f2bad.css",
-    "static/js/main.7b39b850.js"
+    "static/css/main.a19a9e88.css",
+    "static/js/main.1f1ee289.js"
   ]
 }
