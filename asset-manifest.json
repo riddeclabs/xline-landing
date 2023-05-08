@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/xline-landing/static/css/main.a19a9e88.css",
+    "main.css": "/xline-landing/static/css/main.a54d5259.css",
     "main.js": "/xline-landing/static/js/main.1f1ee289.js",
     "static/js/787.3f2711aa.chunk.js": "/xline-landing/static/js/787.3f2711aa.chunk.js",
     "static/media/background.png": "/xline-landing/static/media/background.be64d5e3f16e81159aaf.png",
@@ -24,12 +24,12 @@
     "static/media/creditCardWhite.svg": "/xline-landing/static/media/creditCardWhite.7b3144a58c4c0fec2c746116d1a2d60b.svg",
     "index.html": "/xline-landing/index.html",
     "static/media/cross.svg": "/xline-landing/static/media/cross.8ea31d451554116b956a46e613c39109.svg",
-    "main.a19a9e88.css.map": "/xline-landing/static/css/main.a19a9e88.css.map",
+    "main.a54d5259.css.map": "/xline-landing/static/css/main.a54d5259.css.map",
     "main.1f1ee289.js.map": "/xline-landing/static/js/main.1f1ee289.js.map",
     "787.3f2711aa.chunk.js.map": "/xline-landing/static/js/787.3f2711aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a19a9e88.css",
+    "static/css/main.a54d5259.css",
     "static/js/main.1f1ee289.js"
   ]
 }
