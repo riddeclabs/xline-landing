@@ -1,5 +1,3 @@
-export { ReactComponent as BTCIcon } from './btc.svg';
-export { ReactComponent as ETHIcon } from './eth.svg';
 export { ReactComponent as LogoIcon } from './logo.svg';
 export { ReactComponent as ChooseCollateralIcon } from './chooseCollateral.svg';
 export { ReactComponent as SetCollateralIcon } from './setCollateral.svg';
