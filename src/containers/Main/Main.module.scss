@@ -30,6 +30,12 @@
       flex-direction: column;
     }
 
+    @include breakpoint(sm) {
+        padding-top: 33px;
+        padding-bottom: 33px;
+        gap: 50px;
+      }
+
     .block {
       margin-top: 63px;
       display: flex;
@@ -48,6 +54,9 @@
         font-size: 48px;
         line-height: 58px;
         text-transform: uppercase;
+        @include breakpoint(sm) {
+            font-size: 32px;
+          }
       }
       .blue {
         color: $xlineBlue;
@@ -64,6 +73,10 @@
         opacity: 0.8;
         margin: 0;
         color: $xlineWhite;
+
+        @include breakpoint(sm) {
+            font-size: 16px;
+          }
       }
     }
   }
