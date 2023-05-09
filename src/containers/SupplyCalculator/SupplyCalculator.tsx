@@ -49,7 +49,8 @@ export const SupplyCalculator: React.FC = () => {
 
   const trackSupplyDebounced = useCallback(
     debounce((v: number) => {
-      track({ action: 'user_change_supply', value: v });
+      track({ action: `user_change_supply_${currency}`, value: v });
+      track({ action: 'user_change_supply_usd', value: Prices[currency] * v });
     }, 500),
     []
   );
@@ -66,7 +67,8 @@ export const SupplyCalculator: React.FC = () => {
 
   const trackLoanDebounced = useCallback(
     debounce((v: number) => {
-      track({ action: 'user_change_loan', value: v });
+      track({ action: `user_change_loan_${currency}`, value: v });
+      track({ action: 'user_change_loan_usd', value: Prices[currency] * v });
     }, 500),
     []
   );
