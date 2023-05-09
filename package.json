@@ -2,7 +2,7 @@
   "name": "xline-lending",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://riddeclabs.github.io/xline-landing",
+  "homepage": "https://xline.riddec.com",
   "dependencies": {
     "@formspree/react": "^2.4.1",
     "@testing-library/jest-dom": "^5.14.1",
