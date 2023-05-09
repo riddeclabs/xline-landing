@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TagManager from 'react-gtm-module';
+
+const tagManagerArgs = {
+  gtmId: 'G-B98V96Q6XX',
+};
+
+TagManager.initialize(tagManagerArgs);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
