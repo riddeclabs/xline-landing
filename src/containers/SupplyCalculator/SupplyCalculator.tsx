@@ -41,7 +41,7 @@ export const SupplyCalculator: React.FC = () => {
   const track = useAnalyticsEventTracker('Calculator');
 
   const onCurrencyChange = useCallback((v: string) => {
-    track('user_change_currency', v);
+    track({ action: 'user_change_currency', label: v });
     setCurrecny(v as Currencies);
     setTotalSupply(0);
     setActualLoan(0);
@@ -49,7 +49,7 @@ export const SupplyCalculator: React.FC = () => {
 
   const trackSupplyDebounced = useCallback(
     debounce((v: number) => {
-      track('user_change_supply', `${v} ${currency}`);
+      track({ action: 'user_change_supply', value: v });
     }, 500),
     []
   );
@@ -66,7 +66,7 @@ export const SupplyCalculator: React.FC = () => {
 
   const trackLoanDebounced = useCallback(
     debounce((v: number) => {
-      track('user_change_loan', `${v} ${currency}`);
+      track({ action: 'user_change_loan', value: v });
     }, 500),
     []
   );

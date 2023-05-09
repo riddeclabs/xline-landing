@@ -4,7 +4,7 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TagManager from 'react-gtm-module';
-import { initialize } from 'react-ga';
+import ReactGA from 'react-ga4';
 
 const tagManagerArgs = {
   gtmId: 'G-B98V96Q6XX',
@@ -12,8 +12,8 @@ const tagManagerArgs = {
 
 // gtm initialize
 TagManager.initialize(tagManagerArgs);
-// ga initialize
-initialize('G-B98V96Q6XX');
+// ga4 initialize
+ReactGA.initialize('G-B98V96Q6XX');
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -10,7 +10,10 @@ export const ApplyForm: React.FC = () => {
   const [state, handleSubmit] = useForm('mrgvjvkw');
   const track = useAnalyticsEventTracker('CTA');
   const onSubmit = (data: unknown) => {
-    track('cta_form_submitted', 'user submit email via form');
+    track({
+      action: 'cta_form_submitted',
+      label: 'user submit email via form',
+    });
     return handleSubmit(data);
   };
   useEffect(() => {
@@ -24,7 +27,10 @@ export const ApplyForm: React.FC = () => {
         type='button'
         className={classes.button}
         onClick={() => {
-          track('cta_button_clicked', 'user click on Apply Now button');
+          track({
+            action: 'cta_button_clicked',
+            label: 'user click on Apply Now button',
+          });
           openModal((prev) => !prev);
         }}
       >
