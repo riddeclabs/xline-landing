@@ -3,10 +3,16 @@ import classes from './ApplyForm.module.scss';
 import Modal from 'react-modal';
 import { LogoBlackIcon, CrossIcon } from '../../assets/images';
 import { useForm } from '@formspree/react';
+import { useAnalyticsEventTracker } from '../../analytics/hooks';
 
 export const ApplyForm: React.FC = () => {
   const [isOpen, openModal] = useState(false);
   const [state, handleSubmit] = useForm('mrgvjvkw');
+  const track = useAnalyticsEventTracker('CTA');
+  const onSubmit = (data: unknown) => {
+    track('cta_form_submitted', 'user submit email via form');
+    return handleSubmit(data);
+  };
   useEffect(() => {
     if (state.succeeded) {
       openModal(false);
@@ -18,6 +24,7 @@ export const ApplyForm: React.FC = () => {
         type='button'
         className={classes.button}
         onClick={() => {
+          track('cta_button_clicked', 'user click on Apply Now button');
           openModal((prev) => !prev);
         }}
       >
@@ -29,7 +36,7 @@ export const ApplyForm: React.FC = () => {
         className={classes.modal}
         overlayClassName={classes.overlay}
       >
-        <form onSubmit={handleSubmit} className={classes.content}>
+        <form onSubmit={onSubmit} className={classes.content}>
           <button
             type='button'
             onClick={() => openModal(false)}

@@ -4,12 +4,16 @@ import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import TagManager from 'react-gtm-module';
+import { initialize } from 'react-ga';
 
 const tagManagerArgs = {
   gtmId: 'G-B98V96Q6XX',
 };
 
+// gtm initialize
 TagManager.initialize(tagManagerArgs);
+// ga initialize
+initialize('G-B98V96Q6XX');
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

@@ -2,6 +2,9 @@ import React, { useState, useCallback, useMemo } from 'react';
 import classes from './SupplyCalculator.module.scss';
 import { Toggle } from './components/toggle/Toggle';
 import { cur, pct } from '../../helpers';
+import { useAnalyticsEventTracker } from '../../analytics/hooks';
+import debounce from 'lodash.debounce';
+
 enum Currencies {
   BTC = 'BTC',
   ETH = 'ETH',
@@ -35,21 +38,44 @@ export const SupplyCalculator: React.FC = () => {
   const [totalSupply, setTotalSupply] = useState(0);
   const [actualLoan, setActualLoan] = useState(0);
 
+  const track = useAnalyticsEventTracker('Calculator');
+
   const onCurrencyChange = useCallback((v: string) => {
+    track('user_change_currency', v);
     setCurrecny(v as Currencies);
     setTotalSupply(0);
     setActualLoan(0);
   }, []);
+
+  const trackSupplyDebounced = useCallback(
+    debounce((v: number) => {
+      track('user_change_supply', `${v} ${currency}`);
+    }, 500),
+    []
+  );
+
   const onSupplyChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      setTotalSupply(Number(e.target.value));
+      const v = Number(e.target.value);
+      setTotalSupply(v);
+      trackSupplyDebounced(v);
       setActualLoan(0);
     },
     []
   );
+
+  const trackLoanDebounced = useCallback(
+    debounce((v: number) => {
+      track('user_change_loan', `${v} ${currency}`);
+    }, 500),
+    []
+  );
+
   const onActualLoanChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      setActualLoan(Number(e.target.value));
+      const v = Number(e.target.value);
+      setActualLoan(v);
+      trackLoanDebounced(v);
     },
     []
   );
